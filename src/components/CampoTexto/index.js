@@ -6,7 +6,12 @@ const CampoTexto = props => {
   return (
     <div className="campo-texto">
       <label>{props.label}</label>
-      <input placeholder={placeholderModificado} />
+      <input
+        onChange={evento => props.aoAlterar(evento.target.value)}
+        value={props.valor}
+        placeholder={placeholderModificado}
+        required={props.obrigatorio}
+      />
     </div>
   )
 }
