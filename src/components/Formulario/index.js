@@ -5,6 +5,11 @@ import './style.css'
 import { useState } from 'react'
 
 const Formulario = props => {
+  const [nome, setNome] = useState('')
+  const [cargo, setCargo] = useState('')
+  const [imagem, setImagem] = useState('')
+  const [time, setTime] = useState('Front-End')
+
   const aoCriarCartao = evento => {
     evento.preventDefault()
     props.aoAdicionarColaborador({
@@ -13,12 +18,12 @@ const Formulario = props => {
       imagem,
       time
     })
-  }
 
-  const [nome, setNome] = useState('')
-  const [cargo, setCargo] = useState('')
-  const [imagem, setImagem] = useState('')
-  const [time, setTime] = useState('Programador')
+    setNome('')
+    setCargo('')
+    setImagem('')
+    setTime('Front-End')
+  }
 
   return (
     <section className="formulario">
